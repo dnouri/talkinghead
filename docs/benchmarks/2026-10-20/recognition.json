@@ -1,0 +1,52 @@
+[
+  {
+    "result": "PASS",
+    "audio": "current-0.wav",
+    "sha256": "fb33a75fd02bb11ebd8b7311f8849ef4254221eee3edc5e125ec43b850b121d6",
+    "expected": "Hello, this is a local speech test.",
+    "transcript": "Hello, this is a local speech test.",
+    "model": "Whisper-small",
+    "device": "cpu",
+    "computeType": "int8"
+  },
+  {
+    "result": "PASS",
+    "audio": "current-1.wav",
+    "sha256": "fb33a75fd02bb11ebd8b7311f8849ef4254221eee3edc5e125ec43b850b121d6",
+    "expected": "Hello, this is a local speech test.",
+    "transcript": "Hello, this is a local speech test.",
+    "model": "Whisper-small",
+    "device": "cpu",
+    "computeType": "int8"
+  },
+  {
+    "result": "PASS",
+    "audio": "current-2.wav",
+    "sha256": "fb33a75fd02bb11ebd8b7311f8849ef4254221eee3edc5e125ec43b850b121d6",
+    "expected": "Hello, this is a local speech test.",
+    "transcript": "Hello, this is a local speech test.",
+    "model": "Whisper-small",
+    "device": "cpu",
+    "computeType": "int8"
+  },
+  {
+    "result": "PASS",
+    "audio": "current-3.wav",
+    "sha256": "fb33a75fd02bb11ebd8b7311f8849ef4254221eee3edc5e125ec43b850b121d6",
+    "expected": "Hello, this is a local speech test.",
+    "transcript": "Hello, this is a local speech test.",
+    "model": "Whisper-small",
+    "device": "cpu",
+    "computeType": "int8"
+  },
+  {
+    "result": "PASS",
+    "audio": "current-4.wav",
+    "sha256": "fb33a75fd02bb11ebd8b7311f8849ef4254221eee3edc5e125ec43b850b121d6",
+    "expected": "Hello, this is a local speech test.",
+    "transcript": "Hello, this is a local speech test.",
+    "model": "Whisper-small",
+    "device": "cpu",
+    "computeType": "int8"
+  }
+]

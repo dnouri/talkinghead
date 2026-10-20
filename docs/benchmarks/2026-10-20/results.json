@@ -1,0 +1,315 @@
+{
+  "result": "PASS",
+  "startedAtUTC": "2026-10-20T19:22:56.267Z",
+  "finishedAtUTC": "2026-10-20T19:25:37.897Z",
+  "phrase": "Hello, this is a local speech test. Back again.",
+  "count": 5,
+  "environment": {
+    "node": "v24.9.0",
+    "host": {
+      "os": "Linux",
+      "platform": "linux",
+      "release": "7.1.3+deb13-amd64",
+      "version": "#1 SMP PREEMPT_DYNAMIC Debian 7.1.3-1~bpo13+1 (2026-07-12)",
+      "arch": "x64",
+      "cpuModels": [
+        "AMD Ryzen 7 PRO 7840U w/ Radeon 780M Graphics"
+      ],
+      "logicalCPUs": 16,
+      "totalMemoryBytes": 32221765632
+    },
+    "browser": {
+      "version": "153.0.8010.12",
+      "headless": true,
+      "requestedArgs": [
+        "--enable-automation",
+        "--disable-webgpu",
+        "--enable-unsafe-swiftshader"
+      ],
+      "cdpVersion": {
+        "protocolVersion": "1.3",
+        "product": "HeadlessChrome/153.0.8010.12",
+        "revision": "@971a7443b0c9b0a9b2860529b33331b76077ec62",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+        "jsVersion": "15.3.76.4"
+      },
+      "commandLine": [
+        "chrome-headless-shell",
+        "--disable-field-trial-config",
+        "--disable-background-networking",
+        "--disable-background-timer-throttling",
+        "--disable-backgrounding-occluded-windows",
+        "--disable-back-forward-cache",
+        "--disable-breakpad",
+        "--disable-client-side-phishing-detection",
+        "--disable-component-extensions-with-background-pages",
+        "--disable-component-update",
+        "--no-default-browser-check",
+        "--disable-default-apps",
+        "--disable-dev-shm-usage",
+        "--disable-edgeupdater",
+        "--disable-extensions",
+        "--disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion",
+        "--enable-features=CDPScreenshotNewSurface",
+        "--allow-pre-commit-input",
+        "--disable-hang-monitor",
+        "--disable-ipc-flooding-protection",
+        "--disable-popup-blocking",
+        "--disable-prompt-on-repost",
+        "--disable-renderer-backgrounding",
+        "--disable-updater-scheduler",
+        "--force-color-profile=srgb",
+        "--metrics-recording-only",
+        "--no-first-run",
+        "--password-store=basic",
+        "--use-mock-keychain",
+        "--no-service-autorun",
+        "--export-tagged-pdf",
+        "--disable-search-engine-choice-screen",
+        "--unsafely-disable-devtools-self-xss-warnings",
+        "--edge-skip-compat-layer-relaunch",
+        "--disable-infobars",
+        "--disable-search-engine-choice-screen",
+        "--disable-sync",
+        "--enable-unsafe-swiftshader",
+        "--headless",
+        "--hide-scrollbars",
+        "--mute-audio",
+        "--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4",
+        "--no-sandbox",
+        "--enable-automation",
+        "--disable-webgpu",
+        "--enable-unsafe-swiftshader",
+        "--user-data-dir=<fresh-temporary-profile>",
+        "--remote-debugging-pipe",
+        "--no-startup-window",
+        "--use-gl=angle",
+        "--use-angle=swiftshader-webgl",
+        "--ozone-platform=headless",
+        "--allow-pre-commit-input"
+      ],
+      "playwrightDefaultExecutable": "chrome"
+    }
+  },
+  "cache": {
+    "browser": "A fresh non-persistent browser context per sample, with no prior cookies, HTTP cache, IndexedDB, or application storage.",
+    "withinSample": "Ordinary browser HTTP caching is enabled within each context. Initialization precedes speech.",
+    "betweenSamples": "One browser process is reused. Contexts are closed between samples. Targets alternate when BEFORE_URL is supplied.",
+    "upstream": "Server, proxy/CDN, operating-system, and filesystem caches are not cleared or assumed cold. A fresh context does not reset them."
+  },
+  "timingDefinitions": {
+    "initializeMS": "Initialize click to the speech worker ready message.",
+    "firstAudioMS": "Speak click to the first native AudioBufferSourceNode.start call, not acoustic output or full generation.",
+    "workers": "Worker objects created by the document, not WASM thread count.",
+    "rendererCPUSeconds": "Renderer-process CPU delta during the first-audio interval, not total browser or system CPU."
+  },
+  "samples": [
+    {
+      "label": "current",
+      "url": "https://dnouri.github.io/talkinghead/",
+      "hostKind": "remote",
+      "sourceRevision": {
+        "revision": "4130d87bafe53268d67633af3dceea789a98ab3c",
+        "source": "https://dnouri.github.io/talkinghead/build-info.json",
+        "buildInfo": {
+          "revision": "4130d87bafe53268d67633af3dceea789a98ab3c",
+          "runId": "39482031315",
+          "runAttempt": "1",
+          "repository": "dnouri/talkinghead",
+          "builtAtUTC": "2026-10-20T19:16:58.114Z"
+        }
+      },
+      "repetition": 0,
+      "startedAtUTC": "2026-10-20T19:22:56.612Z",
+      "finishedAtUTC": "2026-10-20T19:23:34.470Z",
+      "finalURL": "https://dnouri.github.io/talkinghead/",
+      "isolated": false,
+      "hardwareConcurrency": 16,
+      "worker": {
+        "url": "https://dnouri.github.io/talkinghead/assets/worker-tts-Cs79X6G1.js",
+        "isolated": false,
+        "hardwareConcurrency": 16
+      },
+      "workers": 1,
+      "coop": null,
+      "coep": null,
+      "initializeMS": 17683.70000076294,
+      "firstAudioMS": 13223.699999809265,
+      "generatedAtFirstAudio": 1,
+      "rendererCPUSeconds": 14.510000000000002,
+      "errors": []
+    },
+    {
+      "label": "current",
+      "url": "https://dnouri.github.io/talkinghead/",
+      "hostKind": "remote",
+      "sourceRevision": {
+        "revision": "4130d87bafe53268d67633af3dceea789a98ab3c",
+        "source": "https://dnouri.github.io/talkinghead/build-info.json",
+        "buildInfo": {
+          "revision": "4130d87bafe53268d67633af3dceea789a98ab3c",
+          "runId": "39482031315",
+          "runAttempt": "1",
+          "repository": "dnouri/talkinghead",
+          "builtAtUTC": "2026-10-20T19:16:58.114Z"
+        }
+      },
+      "repetition": 1,
+      "startedAtUTC": "2026-10-20T19:23:34.486Z",
+      "finishedAtUTC": "2026-10-20T19:24:04.747Z",
+      "finalURL": "https://dnouri.github.io/talkinghead/",
+      "isolated": false,
+      "hardwareConcurrency": 16,
+      "worker": {
+        "url": "https://dnouri.github.io/talkinghead/assets/worker-tts-Cs79X6G1.js",
+        "isolated": false,
+        "hardwareConcurrency": 16
+      },
+      "workers": 1,
+      "coop": null,
+      "coep": null,
+      "initializeMS": 10462,
+      "firstAudioMS": 12880.5,
+      "generatedAtFirstAudio": 1,
+      "rendererCPUSeconds": 14.4,
+      "errors": []
+    },
+    {
+      "label": "current",
+      "url": "https://dnouri.github.io/talkinghead/",
+      "hostKind": "remote",
+      "sourceRevision": {
+        "revision": "4130d87bafe53268d67633af3dceea789a98ab3c",
+        "source": "https://dnouri.github.io/talkinghead/build-info.json",
+        "buildInfo": {
+          "revision": "4130d87bafe53268d67633af3dceea789a98ab3c",
+          "runId": "39482031315",
+          "runAttempt": "1",
+          "repository": "dnouri/talkinghead",
+          "builtAtUTC": "2026-10-20T19:16:58.114Z"
+        }
+      },
+      "repetition": 2,
+      "startedAtUTC": "2026-10-20T19:24:04.762Z",
+      "finishedAtUTC": "2026-10-20T19:24:34.790Z",
+      "finalURL": "https://dnouri.github.io/talkinghead/",
+      "isolated": false,
+      "hardwareConcurrency": 16,
+      "worker": {
+        "url": "https://dnouri.github.io/talkinghead/assets/worker-tts-Cs79X6G1.js",
+        "isolated": false,
+        "hardwareConcurrency": 16
+      },
+      "workers": 1,
+      "coop": null,
+      "coep": null,
+      "initializeMS": 10371.300000190735,
+      "firstAudioMS": 12940,
+      "generatedAtFirstAudio": 1,
+      "rendererCPUSeconds": 14.260000000000002,
+      "errors": []
+    },
+    {
+      "label": "current",
+      "url": "https://dnouri.github.io/talkinghead/",
+      "hostKind": "remote",
+      "sourceRevision": {
+        "revision": "4130d87bafe53268d67633af3dceea789a98ab3c",
+        "source": "https://dnouri.github.io/talkinghead/build-info.json",
+        "buildInfo": {
+          "revision": "4130d87bafe53268d67633af3dceea789a98ab3c",
+          "runId": "39482031315",
+          "runAttempt": "1",
+          "repository": "dnouri/talkinghead",
+          "builtAtUTC": "2026-10-20T19:16:58.114Z"
+        }
+      },
+      "repetition": 3,
+      "startedAtUTC": "2026-10-20T19:24:34.807Z",
+      "finishedAtUTC": "2026-10-20T19:25:05.343Z",
+      "finalURL": "https://dnouri.github.io/talkinghead/",
+      "isolated": false,
+      "hardwareConcurrency": 16,
+      "worker": {
+        "url": "https://dnouri.github.io/talkinghead/assets/worker-tts-Cs79X6G1.js",
+        "isolated": false,
+        "hardwareConcurrency": 16
+      },
+      "workers": 1,
+      "coop": null,
+      "coep": null,
+      "initializeMS": 10860.60000038147,
+      "firstAudioMS": 12953.199999809265,
+      "generatedAtFirstAudio": 1,
+      "rendererCPUSeconds": 14.23,
+      "errors": []
+    },
+    {
+      "label": "current",
+      "url": "https://dnouri.github.io/talkinghead/",
+      "hostKind": "remote",
+      "sourceRevision": {
+        "revision": "4130d87bafe53268d67633af3dceea789a98ab3c",
+        "source": "https://dnouri.github.io/talkinghead/build-info.json",
+        "buildInfo": {
+          "revision": "4130d87bafe53268d67633af3dceea789a98ab3c",
+          "runId": "39482031315",
+          "runAttempt": "1",
+          "repository": "dnouri/talkinghead",
+          "builtAtUTC": "2026-10-20T19:16:58.114Z"
+        }
+      },
+      "repetition": 4,
+      "startedAtUTC": "2026-10-20T19:25:05.354Z",
+      "finishedAtUTC": "2026-10-20T19:25:37.865Z",
+      "finalURL": "https://dnouri.github.io/talkinghead/",
+      "isolated": false,
+      "hardwareConcurrency": 16,
+      "worker": {
+        "url": "https://dnouri.github.io/talkinghead/assets/worker-tts-Cs79X6G1.js",
+        "isolated": false,
+        "hardwareConcurrency": 16
+      },
+      "workers": 1,
+      "coop": null,
+      "coep": null,
+      "initializeMS": 11692.60000038147,
+      "firstAudioMS": 13840.900000572205,
+      "generatedAtFirstAudio": 1,
+      "rendererCPUSeconds": 15.530000000000001,
+      "errors": []
+    }
+  ],
+  "failures": [],
+  "summary": [
+    {
+      "label": "current",
+      "url": "https://dnouri.github.io/talkinghead/",
+      "hostKind": "remote",
+      "sourceRevision": {
+        "revision": "4130d87bafe53268d67633af3dceea789a98ab3c",
+        "source": "https://dnouri.github.io/talkinghead/build-info.json",
+        "buildInfo": {
+          "revision": "4130d87bafe53268d67633af3dceea789a98ab3c",
+          "runId": "39482031315",
+          "runAttempt": "1",
+          "repository": "dnouri/talkinghead",
+          "builtAtUTC": "2026-10-20T19:16:58.114Z"
+        }
+      },
+      "initializeMS": {
+        "median": 10860.60000038147,
+        "min": 10371.300000190735,
+        "max": 17683.70000076294,
+        "count": 5
+      },
+      "firstAudioMS": {
+        "median": 12953.199999809265,
+        "min": 12880.5,
+        "max": 13840.900000572205,
+        "count": 5
+      }
+    }
+  ],
+  "publicationNotes": "Executable installation paths and the temporary profile directory are shortened. Timing values, source revisions, browser flags and other observations are unchanged. playwrightDefaultExecutable is the default lookup, not an override. The observed command line identifies the actual headless-shell executable."
+}

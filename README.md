@@ -41,7 +41,7 @@ Honest findings instead of promises.
 - **Stop** halts playback immediately and discards cancelled results. An inference already running still uses the CPU until it returns. The model does not take hints mid-sentence.
 - All voices use the same US English pronunciation dictionary. The British voices cope bravely.
 
-The timing method and hosting limits are in [docs/performance.md](docs/performance.md).
+A [five-run live-site reference](docs/performance.md#published-numbers) on an AMD Ryzen 7 PRO 7840U measured a median 10.9 seconds to ready. First audio took 13.0 seconds after **Speak**. These are single-threaded, fresh-context measurements, not a speed guarantee.
 
 ## Run it locally
 

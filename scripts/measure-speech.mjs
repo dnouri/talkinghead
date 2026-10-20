@@ -19,7 +19,7 @@ for (const target of targets) {
 }
 const phrase = 'Hello, this is a local speech test. Back again.';
 const startedAtUTC = new Date().toISOString();
-const launchArgs = ['--disable-webgpu', '--enable-unsafe-swiftshader'];
+const launchArgs = ['--enable-automation', '--disable-webgpu', '--enable-unsafe-swiftshader'];
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch({
   headless: true,
@@ -32,7 +32,7 @@ const failures = [];
 const environment = {
   node: process.version,
   host: { os: type(), platform: platform(), release: release(), version: version(), arch: arch(), cpuModels: [...new Set(cpus().map(cpu => cpu.model))], logicalCPUs: cpus().length, totalMemoryBytes: totalmem() },
-  browser: { version: browser.version(), headless: true, requestedArgs: launchArgs, requestedExecutable: process.env.CHROMIUM_PATH || chromium.executablePath() },
+  browser: { version: browser.version(), headless: true, requestedArgs: launchArgs, executableOverride: process.env.CHROMIUM_PATH || null },
 };
 const cache = {
   browser: 'A fresh non-persistent browser context per sample, with no prior cookies, HTTP cache, IndexedDB, or application storage.',

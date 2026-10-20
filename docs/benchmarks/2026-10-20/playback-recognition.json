@@ -1,0 +1,7 @@
+{
+  "result": "PASS",
+  "audio": "playback.webm",
+  "model": "small",
+  "expected": "Hello, this is a local speech test. Back again.",
+  "transcript": "Hello, this is a local speech test. Back again."
+}
