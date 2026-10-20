@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: pages-talkinghead
+  group: ${{ github.ref == 'refs/heads/main' && 'pages-talkinghead' || format('checks-{0}', github.ref) }}
   cancel-in-progress: false
 
 env:
