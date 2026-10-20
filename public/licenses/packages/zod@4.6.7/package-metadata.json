@@ -1,0 +1,11 @@
+{
+  "name": "zod",
+  "version": "4.6.7",
+  "license": "MIT",
+  "author": "Colin McDonnell <zod@colinhacks.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colinhacks/zod.git"
+  },
+  "homepage": "https://zod.dev"
+}

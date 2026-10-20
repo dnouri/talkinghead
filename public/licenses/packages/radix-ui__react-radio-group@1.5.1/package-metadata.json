@@ -1,0 +1,11 @@
+{
+  "name": "@radix-ui/react-radio-group",
+  "version": "1.5.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radix-ui/primitives.git",
+    "directory": "packages/react/radio-group"
+  },
+  "homepage": "https://radix-ui.com/primitives"
+}

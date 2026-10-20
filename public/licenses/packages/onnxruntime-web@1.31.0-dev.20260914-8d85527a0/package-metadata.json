@@ -1,0 +1,10 @@
+{
+  "name": "onnxruntime-web",
+  "version": "1.31.0-dev.20260914-8d85527a0",
+  "license": "MIT",
+  "author": "fs-eire",
+  "repository": {
+    "url": "https://github.com/Microsoft/onnxruntime.git",
+    "type": "git"
+  }
+}

@@ -1,0 +1,245 @@
+name: Publish and verify Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-talkinghead
+  cancel-in-progress: false
+
+env:
+  BASE_PATH: /talkinghead/
+  NODE_VERSION: '24.9.0'
+  PLAYWRIGHT_VERSION: '1.63.0'
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    steps:
+      - name: Prepare evidence
+        run: |
+          evidence="$RUNNER_TEMP/pages-build-evidence"
+          mkdir -p "$evidence"
+          printf '%s\n' "$GITHUB_SHA" > "$evidence/revision.txt"
+          printf 'BROWSER_EVIDENCE=%s\n' "$evidence" >> "$GITHUB_ENV"
+          printf 'PLAYWRIGHT_BROWSERS_PATH=%s\n' "$RUNNER_TEMP/pages-browsers" >> "$GITHUB_ENV"
+      - name: Check out the tested revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install locked application dependencies
+        run: npm ci
+      - name: Check and build the project-mounted artifact
+        run: |
+          npm run lint:app
+          npm run build -- --base="$BASE_PATH"
+      - name: Verify artifact completeness and identify its revision
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { createHash } from 'node:crypto';
+          import { createReadStream } from 'node:fs';
+          import { lstat, readdir, readFile, writeFile } from 'node:fs/promises';
+          import { join } from 'node:path';
+          async function files(root) {
+            const result = [];
+            for (const entry of await readdir(root)) {
+              const path = join(root, entry);
+              const info = await lstat(path);
+              assert.equal(info.isSymbolicLink(), false, `No artifact symlinks: ${path}`);
+              if (info.isDirectory()) result.push(...await files(path));
+              else {
+                assert.ok(info.isFile() && info.nlink === 1, `Only regular, unlinked files: ${path}`);
+                result.push({ path, size: info.size });
+              }
+            }
+            return result;
+          }
+          async function hash(path) {
+            const digest = createHash('sha256');
+            for await (const chunk of createReadStream(path)) digest.update(chunk);
+            return digest.digest('hex');
+          }
+          const artifact = await files('dist');
+          assert.ok(artifact.reduce((sum, file) => sum + file.size, 0) < 1_000_000_000);
+          for (const file of await files('public')) {
+            const copy = join('dist', file.path.slice('public/'.length));
+            assert.equal(await hash(copy), await hash(file.path), `Public asset bytes must survive the build: ${file.path}`);
+          }
+          assert.equal((await lstat('dist/models/kokoro/onnx/model_quantized.onnx')).size, 92_361_055);
+          for (const extension of ['.js', '.mjs', '.wasm']) assert.ok(artifact.some(file => file.path.startsWith('dist/assets/') && file.path.endsWith(extension)));
+          const html = await readFile('dist/index.html', 'utf8');
+          assert.ok(html.includes(`src="${process.env.BASE_PATH}assets/`));
+          assert.ok(!html.includes('/src/main.tsx'));
+          await writeFile('dist/build-info.json', JSON.stringify({
+            revision: process.env.GITHUB_SHA,
+            runId: process.env.GITHUB_RUN_ID,
+            runAttempt: process.env.GITHUB_RUN_ATTEMPT,
+            repository: process.env.GITHUB_REPOSITORY,
+            builtAtUTC: new Date().toISOString(),
+          }, null, 2) + '\n');
+          NODE
+      - name: Install the pinned browser tools outside the project
+        run: |
+          npm install --prefix "$RUNNER_TEMP/pages-playwright" --no-save --package-lock=false --ignore-scripts "playwright@$PLAYWRIGHT_VERSION"
+          node "$RUNNER_TEMP/pages-playwright/node_modules/playwright/cli.js" --version | tee "$BROWSER_EVIDENCE/playwright.txt"
+          node "$RUNNER_TEMP/pages-playwright/node_modules/playwright/cli.js" install --with-deps chromium
+          printf 'PLAYWRIGHT_MODULE=%s\n' "$RUNNER_TEMP/pages-playwright/node_modules/playwright/index.mjs" >> "$GITHUB_ENV"
+      - name: Exercise the header-free Pages artifact
+        run: |
+          node scripts/pages-fixture.mjs --port 4173 > "$BROWSER_EVIDENCE/fixture.log" 2>&1 &
+          fixture_pid=$!
+          trap 'kill "$fixture_pid" 2>/dev/null || true' EXIT
+          ready=0
+          for attempt in $(seq 1 60); do
+            if curl --fail --silent --output /dev/null "http://127.0.0.1:4173${BASE_PATH}"; then ready=1; break; fi
+            kill -0 "$fixture_pid"
+            sleep 1
+          done
+          test "$ready" = 1
+          export APP_URL="http://127.0.0.1:4173${BASE_PATH}"
+          export PAGES_CONTRACT=1 FORCE_WASM=1 SOURCE_REVISION="$GITHUB_SHA"
+          export SMOKE_OUTPUT="$BROWSER_EVIDENCE/smoke"
+          npm run smoke 2>&1 | tee "$BROWSER_EVIDENCE/smoke.log"
+      - name: Upload only the verified site
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
+        with:
+          path: dist
+      - name: Preserve browser evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pages-build-evidence-${{ github.run_attempt }}
+          path: ${{ env.BROWSER_EVIDENCE }}
+          retention-days: 14
+          if-no-files-found: warn
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+      deployed: ${{ steps.freshness.outputs.current }}
+    steps:
+      - name: Discover the configured Pages site
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
+      - name: Skip superseded main revisions
+        id: freshness
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { appendFile } from 'node:fs/promises';
+          const response = await fetch(`${process.env.GITHUB_API_URL}/repos/${process.env.GITHUB_REPOSITORY}/git/ref/heads/main`, {
+            headers: { Authorization: `Bearer ${process.env.GH_TOKEN}`, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' },
+            signal: AbortSignal.timeout(30_000),
+          });
+          assert.ok(response.ok, `Main freshness lookup failed with HTTP ${response.status}.`);
+          const ref = await response.json();
+          assert.match(ref.object.sha, /^[a-f0-9]{40}$/i);
+          const current = ref.object.sha === process.env.GITHUB_SHA;
+          await appendFile(process.env.GITHUB_OUTPUT, `current=${current}\n`);
+          await appendFile(process.env.GITHUB_STEP_SUMMARY, current ? `Deploying current main ${process.env.GITHUB_SHA}.\n` : `Skipped superseded revision ${process.env.GITHUB_SHA}. Current main is ${ref.object.sha}.\n`);
+          NODE
+      - name: Deploy the verified artifact
+        if: steps.freshness.outputs.current == 'true'
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
+
+  verify-live:
+    if: needs.deploy.outputs.deployed == 'true'
+    needs: deploy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    env:
+      APP_URL: ${{ needs.deploy.outputs.page_url }}
+      SOURCE_REVISION: ${{ github.sha }}
+    steps:
+      - name: Prepare evidence
+        run: |
+          evidence="$RUNNER_TEMP/pages-live-evidence"
+          mkdir -p "$evidence"
+          printf '%s\n' "$SOURCE_REVISION" > "$evidence/revision.txt"
+          printf 'BROWSER_EVIDENCE=%s\n' "$evidence" >> "$GITHUB_ENV"
+          printf 'PLAYWRIGHT_BROWSERS_PATH=%s\n' "$RUNNER_TEMP/pages-browsers" >> "$GITHUB_ENV"
+      - name: Check out the tested revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Wait for the deployed revision
+        run: |
+          node --input-type=module <<'NODE' 2>&1 | tee "$BROWSER_EVIDENCE/revision-poll.log"
+          import assert from 'node:assert/strict';
+          import { writeFile } from 'node:fs/promises';
+          import { setTimeout } from 'node:timers/promises';
+          const base = new URL(process.env.APP_URL);
+          assert.equal(base.protocol, 'https:');
+          assert.equal(base.hostname, 'dnouri.github.io');
+          assert.equal(base.pathname, process.env.BASE_PATH);
+          assert.equal(base.search + base.hash, '');
+          const deadline = Date.now() + 180_000;
+          let observed = null;
+          while (Date.now() < deadline) {
+            const url = new URL('build-info.json', base);
+            url.searchParams.set('run', `${process.env.GITHUB_RUN_ID}-${Date.now()}`);
+            try {
+              const response = await fetch(url, { cache: 'no-store', signal: AbortSignal.timeout(Math.min(10_000, deadline - Date.now())) });
+              observed = response.ok ? await response.json() : { status: response.status };
+              console.log(JSON.stringify({ atUTC: new Date().toISOString(), observed }));
+              if (observed.revision === process.env.SOURCE_REVISION) break;
+            } catch (error) { console.log(error.message); }
+            await setTimeout(Math.min(5_000, Math.max(0, deadline - Date.now())));
+          }
+          await writeFile(`${process.env.BROWSER_EVIDENCE}/build-info.json`, JSON.stringify(observed, null, 2));
+          assert.equal(observed?.revision, process.env.SOURCE_REVISION, 'The expected revision must become live within three minutes.');
+          NODE
+      - name: Install the pinned browser tools outside the project
+        run: |
+          npm install --prefix "$RUNNER_TEMP/pages-playwright" --no-save --package-lock=false --ignore-scripts "playwright@$PLAYWRIGHT_VERSION"
+          node "$RUNNER_TEMP/pages-playwright/node_modules/playwright/cli.js" --version | tee "$BROWSER_EVIDENCE/playwright.txt"
+          node "$RUNNER_TEMP/pages-playwright/node_modules/playwright/cli.js" install --with-deps chromium
+          printf 'PLAYWRIGHT_MODULE=%s\n' "$RUNNER_TEMP/pages-playwright/node_modules/playwright/index.mjs" >> "$GITHUB_ENV"
+      - name: Verify speech on the actual HTTPS deployment
+        env:
+          PAGES_CONTRACT: '1'
+          FORCE_WASM: '1'
+          SMOKE_OUTPUT: ${{ env.BROWSER_EVIDENCE }}/smoke
+        run: node scripts/smoke.mjs 2>&1 | tee "$BROWSER_EVIDENCE/smoke.log"
+      - name: Preserve browser evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pages-live-evidence-${{ github.run_attempt }}
+          path: ${{ env.BROWSER_EVIDENCE }}
+          retention-days: 14
+          if-no-files-found: warn

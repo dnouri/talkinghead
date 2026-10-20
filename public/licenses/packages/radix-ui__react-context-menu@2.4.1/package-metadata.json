@@ -1,0 +1,11 @@
+{
+  "name": "@radix-ui/react-context-menu",
+  "version": "2.4.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radix-ui/primitives.git",
+    "directory": "packages/react/context-menu"
+  },
+  "homepage": "https://radix-ui.com/primitives"
+}

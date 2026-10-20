@@ -1,0 +1,14 @@
+{
+  "name": "detect-libc",
+  "version": "2.1.2",
+  "license": "Apache-2.0",
+  "author": "Lovell Fuller <npm@lovell.info>",
+  "contributors": [
+    "Niklas Salmoukas <niklas@salmoukas.com>",
+    "Vinícius Lourenço <vinyygamerlol@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lovell/detect-libc.git"
+  }
+}

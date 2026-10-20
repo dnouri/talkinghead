@@ -1,0 +1,11 @@
+{
+  "name": "victory-vendor",
+  "version": "36.9.2",
+  "license": "MIT AND ISC",
+  "author": "Formidable",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FormidableLabs/victory"
+  },
+  "homepage": "https://commerce.nearform.com/open-source/victory"
+}

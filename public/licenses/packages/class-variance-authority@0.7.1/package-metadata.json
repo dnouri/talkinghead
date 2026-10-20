@@ -1,0 +1,8 @@
+{
+  "name": "class-variance-authority",
+  "version": "0.7.1",
+  "license": "Apache-2.0",
+  "author": "Joe Bell (https://joebell.co.uk)",
+  "repository": "https://github.com/joe-bell/cva.git",
+  "homepage": "https://github.com/joe-bell/cva#readme"
+}

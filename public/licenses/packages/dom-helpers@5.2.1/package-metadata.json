@@ -1,0 +1,14 @@
+{
+  "name": "dom-helpers",
+  "version": "5.2.1",
+  "license": "MIT",
+  "author": {
+    "name": "Jason Quense",
+    "email": "monastic.panic@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-bootstrap/dom-helpers.git"
+  },
+  "homepage": "https://github.com/react-bootstrap/dom-helpers#readme"
+}

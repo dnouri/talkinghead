@@ -1,0 +1,11 @@
+{
+  "name": "@hookform/resolvers",
+  "version": "5.9.2",
+  "license": "MIT",
+  "author": "bluebill1049 <bluebill1049@hotmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/react-hook-form/resolvers.git"
+  },
+  "homepage": "https://react-hook-form.com"
+}

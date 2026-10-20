@@ -1,0 +1,11 @@
+{
+  "name": "@radix-ui/react-aspect-ratio",
+  "version": "1.2.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radix-ui/primitives.git",
+    "directory": "packages/react/aspect-ratio"
+  },
+  "homepage": "https://radix-ui.com/primitives"
+}

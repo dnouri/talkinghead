@@ -1,0 +1,12 @@
+{
+  "name": "@babel/runtime",
+  "version": "7.29.10",
+  "license": "MIT",
+  "author": "The Babel Team (https://babel.dev/team)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-runtime"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-runtime"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@radix-ui/react-primitive",
+  "version": "2.2.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radix-ui/primitives.git",
+    "directory": "packages/react/primitive"
+  },
+  "homepage": "https://radix-ui.com/primitives"
+}

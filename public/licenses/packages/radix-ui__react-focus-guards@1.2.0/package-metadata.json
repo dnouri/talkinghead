@@ -1,0 +1,11 @@
+{
+  "name": "@radix-ui/react-focus-guards",
+  "version": "1.2.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radix-ui/primitives.git",
+    "directory": "packages/react/focus-guards"
+  },
+  "homepage": "https://radix-ui.com/primitives"
+}

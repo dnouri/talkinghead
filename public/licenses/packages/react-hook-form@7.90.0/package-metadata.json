@@ -1,0 +1,11 @@
+{
+  "name": "react-hook-form",
+  "version": "7.90.0",
+  "license": "MIT",
+  "author": "Beier(Bill) Luo <bluebill1049@hotmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-hook-form/react-hook-form"
+  },
+  "homepage": "https://react-hook-form.com"
+}

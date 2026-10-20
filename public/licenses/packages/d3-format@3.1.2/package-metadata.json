@@ -1,0 +1,14 @@
+{
+  "name": "d3-format",
+  "version": "3.1.2",
+  "license": "ISC",
+  "author": {
+    "name": "Mike Bostock",
+    "url": "http://bost.ocks.org/mike"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d3/d3-format.git"
+  },
+  "homepage": "https://d3js.org/d3-format/"
+}

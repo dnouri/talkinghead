@@ -1,0 +1,11 @@
+{
+  "name": "@huggingface/tokenizers",
+  "version": "0.2.0",
+  "license": "Apache-2.0",
+  "author": "Hugging Face",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huggingface/tokenizers.js.git"
+  },
+  "homepage": "https://github.com/huggingface/tokenizers.js#readme"
+}

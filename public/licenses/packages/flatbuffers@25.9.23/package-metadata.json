@@ -1,0 +1,11 @@
+{
+  "name": "flatbuffers",
+  "version": "25.9.23",
+  "license": "Apache-2.0",
+  "author": "The FlatBuffers project",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/google/flatbuffers.git"
+  },
+  "homepage": "https://google.github.io/flatbuffers/"
+}

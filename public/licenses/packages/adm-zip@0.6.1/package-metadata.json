@@ -1,0 +1,11 @@
+{
+  "name": "adm-zip",
+  "version": "0.6.1",
+  "license": "MIT",
+  "author": "Nasca Iacob <adm-zip@pm.me> (https://github.com/cthackers)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cthackers/adm-zip.git"
+  },
+  "homepage": "https://github.com/cthackers/adm-zip"
+}

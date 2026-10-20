@@ -1,0 +1,11 @@
+{
+  "name": "tslib",
+  "version": "2.8.1",
+  "license": "0BSD",
+  "author": "Microsoft Corp.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/tslib.git"
+  },
+  "homepage": "https://www.typescriptlang.org/"
+}

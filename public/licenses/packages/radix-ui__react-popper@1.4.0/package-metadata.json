@@ -1,0 +1,11 @@
+{
+  "name": "@radix-ui/react-popper",
+  "version": "1.4.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radix-ui/primitives.git",
+    "directory": "packages/react/popper"
+  },
+  "homepage": "https://radix-ui.com/primitives"
+}

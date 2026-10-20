@@ -1,0 +1,7 @@
+{
+  "name": "@huggingface/jinja",
+  "version": "0.5.10",
+  "license": "MIT",
+  "author": "Hugging Face",
+  "repository": "https://github.com/huggingface/huggingface.js.git"
+}

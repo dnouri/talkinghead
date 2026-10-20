@@ -1,0 +1,34 @@
+The phonemizer, audio utilities, and speech timing code in src/vendor/headtts
+are derived from @met4citizen/headtts 1.3.0 by Mika Suominen.
+The browser worker contains application-specific loading and cancellation changes.
+The accompanying LICENSE contains the upstream MIT license.
+
+The model, voices, dictionary, and avatar have separate terms. The MIT
+license above applies to the identified HeadTTS code, not to all assets.
+
+The unchanged quantized model, tokenizer, and configuration match
+onnx-community/Kokoro-82M-v1.0-ONNX-timestamped at revision
+dd4401a9add81ac692d20e240d22ec9dda82cc29. Its model card declares
+Apache-2.0. All nine unchanged voice files match
+onnx-community/Kokoro-82M-v1.0-ONNX at revision
+468588286ebb2dd77c25b9771e5d165896538cce. That model card also declares
+Apache-2.0. No standalone upstream model-repository LICENSE file was
+available. The model cards and standard Apache-2.0 text are preserved
+under ../licenses/assets/. Exact hashes are in
+../licenses/asset-sources.json and in docs/asset-sources.json in the
+source repository.
+
+The dictionary retains its embedded CMUdict notice, copyright 1993-2015
+Carnegie Mellon University, with its redistribution terms and disclaimer.
+The header is also preserved in ../licenses/assets/CMUdict-NOTICE.txt.
+
+The avatar is a fresh optimization of TalkingHead's mpfb.glb at revision
+2afe6d79779313db8909badebf46f9805a6c7b70. The same revision's README
+specifically declares that avatar CC0. Its source declaration, CC0 text,
+and preparation notice are under ../licenses/avatar/.
+
+The full package/font notice inventory is at ../licenses/index.html.
+These records identify exact sources and upstream declarations. They are
+not blanket legal clearance of training data, voice likeness, or all
+underlying rights. No license has been selected for the original
+application code.

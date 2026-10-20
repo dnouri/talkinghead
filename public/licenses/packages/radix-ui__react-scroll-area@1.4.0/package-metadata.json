@@ -1,0 +1,11 @@
+{
+  "name": "@radix-ui/react-scroll-area",
+  "version": "1.4.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radix-ui/primitives.git",
+    "directory": "packages/react/scroll-area"
+  },
+  "homepage": "https://radix-ui.com/primitives"
+}

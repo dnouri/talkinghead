@@ -1,0 +1,12 @@
+{
+  "name": "@tabby_ai/hijri-converter",
+  "version": "1.0.5",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Dmitry Volovod",
+      "email": "dmitry.volovod@tabby.ai",
+      "url": "https://github.com/dimazollo"
+    }
+  ]
+}

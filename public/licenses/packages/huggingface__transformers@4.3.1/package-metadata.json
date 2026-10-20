@@ -1,0 +1,11 @@
+{
+  "name": "@huggingface/transformers",
+  "version": "4.3.1",
+  "license": "Apache-2.0",
+  "author": "Hugging Face",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huggingface/transformers.js.git"
+  },
+  "homepage": "https://github.com/huggingface/transformers.js#readme"
+}

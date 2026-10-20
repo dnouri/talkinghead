@@ -1,0 +1,11 @@
+{
+  "name": "@radix-ui/react-presence",
+  "version": "1.1.11",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radix-ui/primitives.git",
+    "directory": "packages/react/presence"
+  },
+  "homepage": "https://radix-ui.com/primitives"
+}

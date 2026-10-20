@@ -1,0 +1,11 @@
+{
+  "name": "@radix-ui/react-switch",
+  "version": "1.4.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radix-ui/primitives.git",
+    "directory": "packages/react/switch"
+  },
+  "homepage": "https://radix-ui.com/primitives"
+}

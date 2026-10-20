@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/8d85527a010e294a26b274749f74294b2a32cec5/LICENSE",
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+      "path": "public/licenses/upstream/ort-web-LICENSE",
+      "packages": [
+        "onnxruntime-web"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/8d85527a010e294a26b274749f74294b2a32cec5/ThirdPartyNotices.txt",
+      "sha256": "143764b952fdb1a7c69ce653bfba74a7744d6a8a573bfb73e235fba356c83de3",
+      "path": "public/licenses/upstream/ort-web-ThirdPartyNotices.txt",
+      "packages": [
+        "onnxruntime-web"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7/LICENSE",
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+      "path": "public/licenses/upstream/ort-LICENSE",
+      "packagePaths": [
+        "node_modules/onnxruntime-common",
+        "node_modules/onnxruntime-node"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/f2c39fe2f838cf35ce7da92824f5a5e3ee6e88a7/ThirdPartyNotices.txt",
+      "sha256": "143764b952fdb1a7c69ce653bfba74a7744d6a8a573bfb73e235fba356c83de3",
+      "path": "public/licenses/upstream/ort-ThirdPartyNotices.txt",
+      "packagePaths": [
+        "node_modules/onnxruntime-common",
+        "node_modules/onnxruntime-node"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/2a43ec07e67df9263c7c56c15da76cc7f74d7b32/LICENSE",
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+      "path": "public/licenses/upstream/ort-common-dev-LICENSE",
+      "packagePaths": [
+        "node_modules/onnxruntime-web/node_modules/onnxruntime-common"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/2a43ec07e67df9263c7c56c15da76cc7f74d7b32/ThirdPartyNotices.txt",
+      "sha256": "143764b952fdb1a7c69ce653bfba74a7744d6a8a573bfb73e235fba356c83de3",
+      "path": "public/licenses/upstream/ort-common-dev-ThirdPartyNotices.txt",
+      "packagePaths": [
+        "node_modules/onnxruntime-web/node_modules/onnxruntime-common"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/davidjerleke/embla-carousel/0fe65834136f1aa35e4c1a4a477e5ccb4bb5ee54/LICENSE",
+      "sha256": "992490064b90ec94c302fe5f29dcc14cb44145857064e46f9ffe6c8f511c1093",
+      "path": "public/licenses/upstream/embla-LICENSE",
+      "packages": [
+        "embla-carousel",
+        "embla-carousel-react",
+        "embla-carousel-reactive-utils"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/theKashey/react-remove-scroll-bar/8ca9ba5ea52de03308fe8ced94f7b159a44d28ff/LICENSE",
+      "sha256": "a79aae0c0f21990d9d963bb3c5a79cdcea9a46f8523ba55c58d7fe776b6ebc84",
+      "path": "public/licenses/upstream/scrollbar-LICENSE",
+      "packages": [
+        "react-remove-scroll-bar"
+      ],
+      "qualification": "The npm 2.3.8 tarball omits LICENSE and its gitHead is unavailable upstream. This immutable upstream license snapshot accompanies repository package.json 2.3.7, not a proven 2.3.8 source match."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/FormidableLabs/victory/dd86278d205f3f306e2ab38c317a6f9c56f0a6f8/LICENSE.txt",
+      "sha256": "34dee5fd5e5cc756efb5ad4d64652bce719bdf5e900ca5d7538253e737930bc4",
+      "path": "public/licenses/upstream/victory-LICENSE",
+      "packages": [
+        "victory-vendor"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lovell/sharp-libvips/ebb95f8add54eee8bed840e3fb587e4cbec857d7/LICENSE",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "path": "public/licenses/upstream/libvips-LICENSE",
+      "packagePrefixes": [
+        "@img/sharp-libvips-",
+        "@img/sharp-win32-",
+        "@img/sharp-wasm32"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/lovell/sharp-libvips/ebb95f8add54eee8bed840e3fb587e4cbec857d7/THIRD-PARTY-NOTICES.md",
+      "sha256": "6f0d5086e3bcbee12bcdacf5878b31d1104002aeecaeb241d3fff466108082fe",
+      "path": "public/licenses/upstream/libvips-THIRD-PARTY-NOTICES.md",
+      "packagePrefixes": [
+        "@img/sharp-libvips-",
+        "@img/sharp-win32-",
+        "@img/sharp-wasm32"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/spdx/license-list-data/v3.28.0/text/LGPL-3.0-or-later.txt",
+      "sha256": "996af0513df21f7496288951c41428a03c174e9e4a9d63665c57d670f845ccb1",
+      "path": "public/licenses/upstream/LGPL-3.0.txt",
+      "packagePrefixes": [
+        "@img/sharp-libvips-",
+        "@img/sharp-win32-",
+        "@img/sharp-wasm32"
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/spdx/license-list-data/v3.28.0/text/GPL-3.0-or-later.txt",
+      "sha256": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0",
+      "path": "public/licenses/upstream/GPL-3.0.txt",
+      "packagePrefixes": [
+        "@img/sharp-libvips-",
+        "@img/sharp-win32-",
+        "@img/sharp-wasm32"
+      ]
+    }
+  ]
+}

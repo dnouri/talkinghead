@@ -1,0 +1,11 @@
+{
+  "name": "vaul",
+  "version": "1.1.2",
+  "license": "MIT",
+  "author": "Emil Kowalski <e@emilkowal.ski>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emilkowalski/vaul.git"
+  },
+  "homepage": "https://vaul.emilkowal.ski/"
+}

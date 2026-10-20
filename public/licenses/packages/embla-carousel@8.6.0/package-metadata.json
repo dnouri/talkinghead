@@ -1,0 +1,11 @@
+{
+  "name": "embla-carousel",
+  "version": "8.6.0",
+  "license": "MIT",
+  "author": "David Jerleke",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidjerleke/embla-carousel"
+  },
+  "homepage": "https://www.embla-carousel.com"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@radix-ui/react-use-is-hydrated",
+  "version": "0.1.3",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radix-ui/primitives.git",
+    "directory": "packages/react/use-is-hydrated"
+  },
+  "homepage": "https://radix-ui.com/primitives"
+}

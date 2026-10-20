@@ -1,0 +1,8 @@
+{
+  "name": "protobufjs",
+  "version": "7.6.6",
+  "license": "BSD-3-Clause",
+  "author": "Daniel Wirtz <dcode+protobufjs@dcode.io>",
+  "repository": "protobufjs/protobuf.js",
+  "homepage": "https://protobufjs.github.io/protobuf.js/"
+}

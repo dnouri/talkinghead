@@ -1,0 +1,10 @@
+{
+  "name": "long",
+  "version": "5.3.2",
+  "license": "Apache-2.0",
+  "author": "Daniel Wirtz <dcode@dcode.io>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dcodeIO/long.js.git"
+  }
+}

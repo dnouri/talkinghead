@@ -1,0 +1,11 @@
+{
+  "name": "@radix-ui/react-slot",
+  "version": "1.5.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radix-ui/primitives.git",
+    "directory": "packages/react/slot"
+  },
+  "homepage": "https://radix-ui.com/primitives"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "has-property-descriptors",
+  "version": "1.0.2",
+  "license": "MIT",
+  "author": "Jordan Harband <ljharb@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inspect-js/has-property-descriptors.git"
+  },
+  "homepage": "https://github.com/inspect-js/has-property-descriptors#readme"
+}

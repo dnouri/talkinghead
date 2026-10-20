@@ -1,0 +1,12 @@
+{
+  "name": "@img/sharp-win32-arm64",
+  "version": "0.35.5",
+  "license": "Apache-2.0 AND LGPL-3.0-or-later",
+  "author": "Lovell Fuller <npm@lovell.info>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lovell/sharp.git",
+    "directory": "npm/win32-arm64"
+  },
+  "homepage": "https://sharp.pixelplumbing.com"
+}

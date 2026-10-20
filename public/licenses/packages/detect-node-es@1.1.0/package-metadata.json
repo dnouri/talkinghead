@@ -1,0 +1,11 @@
+{
+  "name": "detect-node-es",
+  "version": "1.1.0",
+  "license": "MIT",
+  "author": "Ilya Kantor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thekashey/detect-node"
+  },
+  "homepage": "https://github.com/thekashey/detect-node"
+}

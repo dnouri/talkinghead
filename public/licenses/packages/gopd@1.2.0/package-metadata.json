@@ -1,0 +1,11 @@
+{
+  "name": "gopd",
+  "version": "1.2.0",
+  "license": "MIT",
+  "author": "Jordan Harband <ljharb@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljharb/gopd.git"
+  },
+  "homepage": "https://github.com/ljharb/gopd#readme"
+}

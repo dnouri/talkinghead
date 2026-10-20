@@ -1,0 +1,7 @@
+{
+  "name": "prop-types",
+  "version": "15.8.1",
+  "license": "MIT",
+  "repository": "facebook/prop-types",
+  "homepage": "https://facebook.github.io/react/"
+}

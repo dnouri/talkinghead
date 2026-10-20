@@ -1,0 +1,10 @@
+{
+  "name": "date-fns",
+  "version": "4.4.0",
+  "license": "MIT",
+  "contributors": [
+    "Sasha Koss <koss@nocorp.me>",
+    "Lesha Koss <regiusprod@gmail.com>"
+  ],
+  "repository": "https://github.com/date-fns/date-fns"
+}

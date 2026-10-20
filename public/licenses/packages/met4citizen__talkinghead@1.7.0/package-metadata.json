@@ -1,0 +1,11 @@
+{
+  "name": "@met4citizen/talkinghead",
+  "version": "1.7.0",
+  "license": "MIT",
+  "author": "Mika Suominen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/met4citizen/TalkingHead.git"
+  },
+  "homepage": "https://github.com/met4citizen/TalkingHead#readme"
+}

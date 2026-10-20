@@ -1,0 +1,11 @@
+{
+  "name": "loose-envify",
+  "version": "1.4.0",
+  "license": "MIT",
+  "author": "Andres Suarez <zertosh@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zertosh/loose-envify.git"
+  },
+  "homepage": "https://github.com/zertosh/loose-envify"
+}

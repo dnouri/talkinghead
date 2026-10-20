@@ -1,0 +1,45 @@
+{
+  "name": "@types/react-dom",
+  "version": "19.3.0",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Asana",
+      "url": "https://asana.com"
+    },
+    {
+      "name": "AssureSign",
+      "url": "http://www.assuresign.com"
+    },
+    {
+      "name": "Microsoft",
+      "url": "https://microsoft.com"
+    },
+    {
+      "name": "MartynasZilinskas",
+      "githubUsername": "MartynasZilinskas",
+      "url": "https://github.com/MartynasZilinskas"
+    },
+    {
+      "name": "Josh Rutherford",
+      "githubUsername": "theruther4d",
+      "url": "https://github.com/theruther4d"
+    },
+    {
+      "name": "Jessica Franco",
+      "githubUsername": "Jessidhia",
+      "url": "https://github.com/Jessidhia"
+    },
+    {
+      "name": "Sebastian Silbermann",
+      "githubUsername": "eps1lon",
+      "url": "https://github.com/eps1lon"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "directory": "types/react-dom"
+  },
+  "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-dom"
+}

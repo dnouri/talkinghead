@@ -1,0 +1,14 @@
+{
+  "name": "react-resizable-panels",
+  "version": "4.14.7",
+  "license": "MIT",
+  "author": "Brian Vaughn <brian.david.vaughn@gmail.com> (https://github.com/bvaughn/)",
+  "contributors": [
+    "Brian Vaughn <brian.david.vaughn@gmail.com> (https://github.com/bvaughn/)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bvaughn/react-resizable-panels.git"
+  },
+  "homepage": "https://react-resizable-panels.vercel.app/"
+}

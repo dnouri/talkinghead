@@ -1,0 +1,11 @@
+{
+  "name": "@radix-ui/react-visually-hidden",
+  "version": "1.2.13",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radix-ui/primitives.git",
+    "directory": "packages/react/visually-hidden"
+  },
+  "homepage": "https://radix-ui.com/primitives"
+}

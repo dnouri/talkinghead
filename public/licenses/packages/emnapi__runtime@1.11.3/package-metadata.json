@@ -1,0 +1,11 @@
+{
+  "name": "@emnapi/runtime",
+  "version": "1.11.3",
+  "license": "MIT",
+  "author": "toyobayashi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toyobayashi/emnapi.git"
+  },
+  "homepage": "https://github.com/toyobayashi/emnapi#readme"
+}

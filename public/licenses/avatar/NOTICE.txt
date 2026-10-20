@@ -1,0 +1,37 @@
+TalkingHead MPFB avatar
+
+The public avatar is a new optimization of avatars/mpfb.glb from
+https://github.com/met4citizen/TalkingHead
+at commit 2afe6d79779313db8909badebf46f9805a6c7b70.
+
+Pinned source:
+https://raw.githubusercontent.com/met4citizen/TalkingHead/2afe6d79779313db8909badebf46f9805a6c7b70/avatars/mpfb.glb
+Source size: 36815920 bytes
+Source SHA-256: 63c645a2a863b9972e9a9c2ed576a1de4c390b8475508e1473e69c87a3ee299c
+
+The same pinned revision's README specifically states:
+Example avatar "mpfb.glb" was created using Blender and MPFB Blender
+extension. The avatar is licensed under CC0.
+
+TalkingHead-README.md preserves the exact original declaration and links.
+CC0-1.0.txt preserves the CC0 legal text. The TalkingHead package's MIT
+license is not the basis for this avatar's terms.
+
+Preparation used @gltf-transform/cli 4.5.1 and the complete dependency lock
+in preparation-tool-lock.json. Geometry is meshopt-compressed and
+quantized. Textures use WebP at a maximum dimension of 1024 pixels.
+No geometry simplification or vertex welding was enabled. The named rig,
+mesh names, morph target names, vertex counts, and index counts remain.
+
+Output size: 3062328 bytes
+Output SHA-256: 8337cc5e7dd1247ffce1a4d5f99a818ca416f12b677f81b7f0891de342ca8f3a
+
+The asset manifest at ../asset-sources.json records the exact tool
+arguments. The source repository has the same manifest at
+docs/asset-sources.json. Run node scripts/prepare-avatar.mjs to reproduce twice and
+verify the output. Add --write to replace the public file after checks pass.
+The compiler installs only in its isolated tmp/publish/assets workspace.
+
+This notice records source identity and an upstream declaration. It is
+not a legal audit of every underlying asset right or a license grant for
+the original application code.

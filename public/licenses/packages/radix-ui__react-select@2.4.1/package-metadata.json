@@ -1,0 +1,11 @@
+{
+  "name": "@radix-ui/react-select",
+  "version": "2.4.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radix-ui/primitives.git",
+    "directory": "packages/react/select"
+  },
+  "homepage": "https://radix-ui.com/primitives"
+}

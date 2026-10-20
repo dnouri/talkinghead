@@ -1,0 +1,10 @@
+{
+  "name": "@standard-schema/utils",
+  "version": "0.3.0",
+  "license": "MIT",
+  "author": "Fabian Hiller",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/standard-schema/standard-schema"
+  }
+}

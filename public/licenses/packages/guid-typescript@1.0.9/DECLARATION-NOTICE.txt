@@ -1,0 +1,5 @@
+guid-typescript 1.0.9
+
+The exact npm package declares ISC and author "nicolas". It supplies no copyright or license body. The repository at the npm gitHead is unavailable. The inspected current repository also has no license file. This file preserves the declaration and does not invent a copyright owner, year, or license grant.
+
+See package-metadata.json and the archive integrity in ../index.json.
