@@ -1,0 +1,13 @@
+{
+  "name": "Virgil",
+  "license": "OFL-1.1",
+  "copyrightAsEmbedded": "Copyright (c) 2011 by Your Own Font Foundry. All rights reserved.",
+  "distribution": "Unmodified WOFF2 embedded in docs/architecture.svg",
+  "package": "@excalidraw/excalidraw",
+  "packageVersion": "0.18.1",
+  "sourceRevision": "a2ec2889babf7d2295469c6d90ebe77fae57df84",
+  "sourceURL": "https://raw.githubusercontent.com/excalidraw/excalidraw/a2ec2889babf7d2295469c6d90ebe77fae57df84/packages/excalidraw/fonts/Virgil/Virgil-Regular.woff2",
+  "sourceAndEmbeddedSha256": "2279cf7daf1c42a3a53b2c1437ad72f0050efb67ac263e0245f67612fd766714",
+  "licenseSource": "Copyright and complete OFL text from the original font name-table metadata, also retained inside the embedded font.",
+  "licenseText": "Virgil-LICENSE.txt"
+}

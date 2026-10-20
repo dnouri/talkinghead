@@ -22,6 +22,12 @@ The index preserves original copyright and license texts, including embedded thi
 
 Space Grotesk retains copyright 2020 The Space Grotesk Project Authors. IBM Plex Mono retains copyright 2017 IBM Corp. The application uses unmodified packaged font files. The font licenses do not determine the application's code license.
 
+### Diagram font
+
+The component diagram embeds an unmodified Virgil WOFF2 from Excalidraw 0.18.1. The font's own metadata declares OFL-1.1 and retains its original copyright statement. These terms are separate from Excalidraw's package license and the application's code.
+
+The [copyright and complete OFL text](docs/fonts/Virgil-LICENSE.txt) are copied from that embedded metadata. The [font source record](docs/fonts/Virgil-source.json) pins the upstream revision and verifies that the source, packaged font, and SVG-embedded font have identical bytes.
+
 ### Qualified package records
 
 Two packages omit a license body from their exact npm packages:
