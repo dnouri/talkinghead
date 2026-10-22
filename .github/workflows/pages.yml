@@ -9,6 +9,10 @@ on:
 permissions:
   contents: read
 
+defaults:
+  run:
+    shell: bash
+
 concurrency:
   group: ${{ github.ref == 'refs/heads/main' && 'pages-talkinghead' || format('checks-{0}', github.ref) }}
   cancel-in-progress: false
@@ -111,6 +115,7 @@ jobs:
           done
           test "$ready" = 1
           export APP_URL="http://127.0.0.1:4173${BASE_PATH}"
+          node scripts/verify-social-preview.mjs | tee "$BROWSER_EVIDENCE/social-preview.json"
           export PAGES_CONTRACT=1 FORCE_WASM=1 SOURCE_REVISION="$GITHUB_SHA"
           export SMOKE_OUTPUT="$BROWSER_EVIDENCE/smoke"
           npm run smoke 2>&1 | tee "$BROWSER_EVIDENCE/smoke.log"
@@ -223,6 +228,9 @@ jobs:
           await writeFile(`${process.env.BROWSER_EVIDENCE}/build-info.json`, JSON.stringify(observed, null, 2));
           assert.equal(observed?.revision, process.env.SOURCE_REVISION, 'The expected revision must become live within three minutes.');
           NODE
+      - name: Verify the public social preview without JavaScript
+        run: |
+          node scripts/verify-social-preview.mjs | tee "$BROWSER_EVIDENCE/social-preview.json"
       - name: Install the pinned browser tools outside the project
         run: |
           npm install --prefix "$RUNNER_TEMP/pages-playwright" --no-save --package-lock=false --ignore-scripts "playwright@$PLAYWRIGHT_VERSION"
